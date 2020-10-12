@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LatinDecoder", "LatinDecoder\LatinDecoder.csproj", "{D09FCAFF-7432-477A-A078-F20F81B0CEBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LatinDecoderDAL", "LatinDecoderDAL\LatinDecoderDAL.csproj", "{99E695E3-C368-4DA2-80BC-9A45D0594DBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D09FCAFF-7432-477A-A078-F20F81B0CEBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D09FCAFF-7432-477A-A078-F20F81B0CEBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D09FCAFF-7432-477A-A078-F20F81B0CEBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D09FCAFF-7432-477A-A078-F20F81B0CEBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99E695E3-C368-4DA2-80BC-9A45D0594DBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99E695E3-C368-4DA2-80BC-9A45D0594DBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99E695E3-C368-4DA2-80BC-9A45D0594DBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99E695E3-C368-4DA2-80BC-9A45D0594DBF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
