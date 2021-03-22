@@ -16,7 +16,7 @@ namespace LatinDecoderDAL
         {
             words = File.ReadAllLines("wwwroot/Dataset/forms.txt");
         }
-        
+
 
         // Basic solution which matches single words
         public List<string> GetWordListWildcard(string WordFragment)
@@ -33,7 +33,9 @@ namespace LatinDecoderDAL
         {
             // make word fragment into lower case
             WordFragment = WordFragment.ToLower();
-            
+
+            // replace long dash with two single dashes
+            WordFragment = WordFragment.Replace("\u2014", "--");
             // get dataset
             List<string> WordList = new List<string>(words);
 
@@ -55,7 +57,8 @@ namespace LatinDecoderDAL
 
                 foreach (var Word in WordList)
                 {
-                    if (Regex.IsMatch(Word, TokenRefined)) {
+                    if (Regex.IsMatch(Word, TokenRefined))
+                    {
                         ListForToken.Add(Word);
                     }
                 }
@@ -74,7 +77,7 @@ namespace LatinDecoderDAL
 
             foreach (var TokenList in ListOfTokenList)
             {
-                WordCombos = WordCombos.SelectMany(r => TokenList.Select(x => !string.IsNullOrEmpty(r) ? r.Trim(' ') + " " + x.Trim(' '): x.Trim(' ')));
+                WordCombos = WordCombos.SelectMany(r => TokenList.Select(x => !string.IsNullOrEmpty(r) ? r.Trim(' ') + " " + x.Trim(' ') : x.Trim(' ')));
             }
 
             //WordCombos = WordCombos.SelectMany(r => TokenList.Select(x => r.Trim(' ') + " " + x.Trim(' ')));
@@ -82,6 +85,6 @@ namespace LatinDecoderDAL
 
             return WordCombos.ToList();
         }
-        
-    } 
+
+    }
 }

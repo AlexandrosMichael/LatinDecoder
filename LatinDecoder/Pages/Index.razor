@@ -18,7 +18,7 @@
                     <button @onclick="ClearSearchBar" class="btn btn-outline-secondary" type="button"><span class="oi oi-delete"></span></button>
                 </div>
             </div>
-            <small id="searchHelp" class="form-text text-muted">e.g iun--m.</small>
+            <small id="searchHelp" class="form-text text-muted">Use hyphen for missing letters e.g iun--m.</small>
             <div class="input-group">
                 <button type="submit" class="btn btn-primary search-clear">Search</button>
                 <button @onclick="ClearWords" class="btn btn-danger search-clear" type="button">Clear Results</button>
@@ -40,7 +40,7 @@
         <ul class="list-unstyled">
             @foreach (var word in words)
             {
-                <li class="">@word</li>
+                <li class="result-row">@word</li>
             }
         </ul>
     }
