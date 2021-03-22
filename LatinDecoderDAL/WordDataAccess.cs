@@ -14,7 +14,7 @@ namespace LatinDecoderDAL
 
         public WordDataAccess()
         {
-            words = File.ReadAllLines("Dataset/forms.txt");
+            words = File.ReadAllLines("wwwroot/Dataset/forms.txt");
         }
         
 
@@ -31,6 +31,9 @@ namespace LatinDecoderDAL
         // Intermediate solution which matches sentences in which words are separated with spaces
         public List<string> GetWordListSentence(string WordFragment)
         {
+            // make word fragment into lower case
+            WordFragment = WordFragment.ToLower();
+            
             // get dataset
             List<string> WordList = new List<string>(words);
 
@@ -71,10 +74,14 @@ namespace LatinDecoderDAL
 
             foreach (var TokenList in ListOfTokenList)
             {
-                WordCombos = WordCombos.SelectMany(r => TokenList.Select(x => r + " " + x));
+                WordCombos = WordCombos.SelectMany(r => TokenList.Select(x => !string.IsNullOrEmpty(r) ? r.Trim(' ') + " " + x.Trim(' '): x.Trim(' ')));
             }
+
+            //WordCombos = WordCombos.SelectMany(r => TokenList.Select(x => r.Trim(' ') + " " + x.Trim(' ')));
+
 
             return WordCombos.ToList();
         }
+        
     } 
 }

@@ -10,7 +10,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Dataset\" />
     <Folder Include="Models\" />
+    <Folder Include="wwwroot\Dataset\" />
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.SignalR" Version="1.1.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Dataset\forms.txt" />
+    <None Remove="Dataset\fakeforms.txt" />
   </ItemGroup>
 </Project>
