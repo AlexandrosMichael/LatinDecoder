@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using LatinDecoderDAL;
 using Microsoft.AspNetCore.Mvc;
-using LatinDecoderDAL;
+using System.Collections.Generic;
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace LatinDecoder.Controllers
@@ -17,8 +14,8 @@ namespace LatinDecoder.Controllers
         {
             WordDataAccess _WordDataAccess = new WordDataAccess();
             List<string> wordList = _WordDataAccess.GetWordListSentence(token);
-            return Json(new { words = wordList});
+            return Json(new { words = wordList });
         }
-        
+
     }
 }

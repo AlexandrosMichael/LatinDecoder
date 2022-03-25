@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace LatinDecoderDAL
 {
@@ -25,23 +23,24 @@ namespace LatinDecoderDAL
         // Solution which matches sentences in which words are separated with spaces
         public List<string> GetWordListSentence(string WordFragment)
         {
-            // make word fragment into lower case
+            // Turn word fragment into lower case
             WordFragment = WordFragment.ToLower();
 
-            // replace long dash with two single dashes
+            // Replace long dash with two single dashes
             WordFragment = WordFragment.Replace("\u2014", "--");
-            // get dataset
+            
+            // Get dataset
             List<string> WordList = new List<string>(words);
 
-            // take care of placeholders
+            // Take care of placeholders
             string pattern = WordFragment.Replace('-', '.');
 
-            // word fragment turn into tokens (could be one only or multiple)
+            // Word fragment turn into tokens (could be one or multiple)
             List<string> SentenceTokens = pattern.Split(' ').ToList();
 
             List<List<string>> ListOfTokenList = new List<List<string>>();
 
-            // get a list for each token of the sentence 
+            // Get a list for each token of the sentence 
             foreach (var Token in SentenceTokens)
             {
                 List<string> ListForToken = new List<string>();
@@ -57,7 +56,6 @@ namespace LatinDecoderDAL
                 ListOfTokenList.Add(ListForToken);
             }
 
-            // Iterate the list of lists and create word combinations
             return GetAllPossibleCombos(ListOfTokenList);
         }
 

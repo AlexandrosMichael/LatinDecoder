@@ -1,5 +1,4 @@
 using LatinDecoderDAL;
-using System;
 using System.Collections.Generic;
 using Xunit;
 
@@ -63,7 +62,7 @@ namespace LatinDecoderTest
                 "praeterequitantesque",
                 "quintadecimanorumque"
             };
-        
+
             List<string> matchesActual = _sut.GetWordListSentence(token);
 
             matchesExpected.Sort();
@@ -125,7 +124,7 @@ namespace LatinDecoderTest
         public static IEnumerable<object[]> TestData2()
         {
             yield return new object[] { new List<string>() { "iuncum lauder", "iuncum pauper", "iungam lauder", "iungam pauper", "iuniam lauder", "iuniam pauper", "iunium lauder", "iunium pauper" }, "iun--m -au-er" };
-            yield return new object[] { new List<string>() { "iuncum pauper abacta","iuncum pauper abacti","iuncum pauper abacto","iungam pauper abacta","iungam pauper abacti","iungam pauper abacto","iuniam pauper abacta","iuniam pauper abacti","iuniam pauper abacto","iunium pauper abacta","iunium pauper abacti","iunium pauper abacto"}, "iun--m paup-r abact-" };
+            yield return new object[] { new List<string>() { "iuncum pauper abacta", "iuncum pauper abacti", "iuncum pauper abacto", "iungam pauper abacta", "iungam pauper abacti", "iungam pauper abacto", "iuniam pauper abacta", "iuniam pauper abacti", "iuniam pauper abacto", "iunium pauper abacta", "iunium pauper abacti", "iunium pauper abacto" }, "iun--m paup-r abact-" };
         }
 
 
