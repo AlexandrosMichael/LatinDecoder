@@ -64,13 +64,7 @@
         search.SearchTerm = "";
     }
 
-    // Method calling the basic matching algorithm for single words
-    private void GetWordsWildcard()
-    {
-        words = _WordDataAccess.GetWordListWildcard(search.SearchTerm);
-    }
-
-    // Method calling the intermediate matching algorithm for sentences in which words are separated by spaces
+    // Method calling the matching algorithm for sentences in which words are separated by spaces
     private void GetWordsSentences()
     {
         words = _WordDataAccess.GetWordListSentence(search.SearchTerm);

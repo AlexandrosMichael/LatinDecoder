@@ -142,6 +142,15 @@ app {
         top: 0.5rem;
     }
 
+.uni-logo-img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.uni-logo-container {
+    position: relative;
+}
+
 @media (max-width: 767.98px) {
     .main .top-row:not(.auth) {
         display: none;
@@ -185,6 +194,11 @@ app {
     .sidebar .collapse {
         /* Never collapse the sidebar for wide screens */
         display: block;
+    }
+
+    .uni-logo-container {
+        position: absolute;
+        bottom: 0;
     }
 }
 

@@ -17,18 +17,12 @@ namespace LatinDecoderDAL
             words = File.ReadAllLines("wwwroot/Dataset/forms.txt");
         }
 
-
-        // Basic solution which matches single words
-        public List<string> GetWordListWildcard(string WordFragment)
+        public WordDataAccess(string path)
         {
-            List<string> WordList = new List<string>(words);
-            string pattern = WordFragment.Replace('-', '.');
-            string patternRefined = $"^{pattern}$";
-            List<string> filtered = WordList.Where(word => Regex.IsMatch(word, patternRefined)).ToList();
-            return filtered;
+            words = File.ReadAllLines(path);
         }
 
-        // Intermediate solution which matches sentences in which words are separated with spaces
+        // Solution which matches sentences in which words are separated with spaces
         public List<string> GetWordListSentence(string WordFragment)
         {
             // make word fragment into lower case
@@ -45,8 +39,6 @@ namespace LatinDecoderDAL
             // word fragment turn into tokens (could be one only or multiple)
             List<string> SentenceTokens = pattern.Split(' ').ToList();
 
-            List<string> Sentences = new List<string>();
-
             List<List<string>> ListOfTokenList = new List<List<string>>();
 
             // get a list for each token of the sentence 
@@ -57,7 +49,7 @@ namespace LatinDecoderDAL
 
                 foreach (var Word in WordList)
                 {
-                    if (Regex.IsMatch(Word, TokenRefined))
+                    if (Regex.IsMatch(Word, TokenRefined, RegexOptions.IgnoreCase))
                     {
                         ListForToken.Add(Word);
                     }
@@ -79,9 +71,6 @@ namespace LatinDecoderDAL
             {
                 WordCombos = WordCombos.SelectMany(r => TokenList.Select(x => !string.IsNullOrEmpty(r) ? r.Trim(' ') + " " + x.Trim(' ') : x.Trim(' ')));
             }
-
-            //WordCombos = WordCombos.SelectMany(r => TokenList.Select(x => r.Trim(' ') + " " + x.Trim(' ')));
-
 
             return WordCombos.ToList();
         }
