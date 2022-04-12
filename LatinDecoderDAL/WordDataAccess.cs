@@ -8,16 +8,18 @@ namespace LatinDecoderDAL
     public class WordDataAccess
     {
         // Attribute holding the words as loaded from the text file
-        private string[] words;
+        private readonly List<string> Words;
 
         public WordDataAccess()
         {
-            words = File.ReadAllLines("wwwroot/Dataset/forms.txt");
+            Words = File.ReadAllLines("wwwroot/Dataset/forms.txt").ToList();
+            Words = Words.Distinct().ToList();
         }
 
         public WordDataAccess(string path)
         {
-            words = File.ReadAllLines(path);
+            Words = File.ReadAllLines(path).ToList();
+            Words = Words.Distinct().ToList();
         }
 
         // Solution which matches sentences in which words are separated with spaces
@@ -30,7 +32,7 @@ namespace LatinDecoderDAL
             WordFragment = WordFragment.Replace("\u2014", "--");
             
             // Get dataset
-            List<string> WordList = new List<string>(words);
+            List<string> WordList = new List<string>(Words);
 
             // Take care of placeholders
             string pattern = WordFragment.Replace('-', '.');
