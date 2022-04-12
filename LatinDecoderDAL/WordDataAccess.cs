@@ -7,18 +7,20 @@ namespace LatinDecoderDAL
 {
     public class WordDataAccess
     {
-        // Attribute holding the words as loaded from the text file
+        // Attribute holding the words as loaded from the data file
         private readonly List<string> Words;
 
         public WordDataAccess()
         {
             Words = File.ReadAllLines("wwwroot/Dataset/forms.txt").ToList();
+            // Remove duplicate words
             Words = Words.Distinct().ToList();
         }
 
         public WordDataAccess(string path)
         {
             Words = File.ReadAllLines(path).ToList();
+            // Remove duplicate words
             Words = Words.Distinct().ToList();
         }
 
