@@ -1,6 +1,6 @@
 # Latin Decoder 
 
-The *Latin Decoder* is the first ever digital tool designed to process and integrate fragmentary Latin texts such as manuscripts and epigraphs. By simply typing a fragmentary Latin word or a group of words including missing letters (*e*.*g*., pec---a) in the search bar, users can look up all its possible textual integrations, as attested in the entire corpus of extant Latin literature and epigraphy.
+The [*Latin Decoder*](https://latindecoder.com) is the first ever digital tool designed to process and integrate fragmentary Latin texts such as manuscripts and epigraphs. By simply typing a fragmentary Latin word or a group of words including missing letters (*e*.*g*., pec---a) in the search bar, users can look up all its possible textual integrations, as attested in the entire corpus of extant Latin literature and epigraphy.
 
 Usually, it is reasonably easy to identify the number of characters of a fragmentary word in a manuscript or an inscription through the analysis of the handwriting and the space that extant characters occupy on the page or stone. However, it is difficult to think about the possible integrations that would match a specific series of letters and spaces in a fragmentary Latin text, especially when a non-native speaker of Latin looks for a so-called *lectio difficilior* (*i*.*e*., a more specific and less banal textual integration).
 
