@@ -13,3 +13,9 @@ The *Latin Decoder* was invented, designed and co-developed by Tommaso Spinelli 
 The developers would like to express their gratitude to the University of Manchester for hosting this programme, and to Anja Le Blanc and Theresa Teng for facilitating the realisation of this project.
 
 The Diachronic Latin Database (https://risweb.st-andrews.ac.uk/portal/en/datasets/the-latin-diachronic-database-project(05bf041f-9654-4173-8c8a-b93a2efa0926).html) used by the *Latin Decoder* was developed by Tommaso Spinelli and Giacomo Fenzi within the *Latine Loquamur* project (https://github.com/latineloquamur?tab=repositories), which was awarded funding by the University of St Andrews (22/03/2018; Grant 690039408), and perfected by Tommaso Spinelli during his Postdoctoral Fellowship at the *Pontificium Institutum Altioris Latinitatis* of the Salesian University of Rome.
+
+## Projects
+
+- [LatinDecoder](LatinDecoder) - This is the [Web Application](https://latindecoder.com) (.NET Core 3.1 Blazor Server) project.
+- [LatinDecoderDAL](LatinDecoderDAL) - This is the library that implements the data access and word-matching features.
+- [LatinDecoderTest](LatinDecoderTest) - This is the unit testing project used during development.
